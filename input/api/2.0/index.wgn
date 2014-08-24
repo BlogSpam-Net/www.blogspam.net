@@ -1,0 +1,45 @@
+title: BlogSpam.net :: Client API v2.0
+----
+
+
+<h2>Available Client Methods</h2>
+<blockquote>
+<p>v2.0 of the client API operates via HTTP, and accepts JSON data over HTTP-POST.</p>
+<p>There are three methods that are exposed via this API:</p>
+<ul>
+<li><a href="#testing">Testing Comments.
+<ul>
+<li><a href="#classify">Reclassifying bogus results.</a></li>
+</ul></li>
+<li><A href="#stats">Retrieving Statistics</a></li>
+<li><a href="#plugins">Retrieving Plugins</a></li>
+</ul>
+<p>Most of the <a href="/code/samples/">code samples</a> have now been updated to work with this new API.</p>
+</blockquote>
+
+<h2 id="testing">Testing Comments</h2>
+<blockquote>
+<p>To test a comment you should encode the various fields the user has submitted in a JSON HASH and then submit a HTTP-POST request against <tt>http://test.blogspam.net:9999/</tt>.</p>
+<p>The result of the submission will be a JSON-encoded object, which contains a SPAM or OK result.</p>
+<p>The input-details and return-value <a href="testComment.html">are documented here</a>.</p>
+</blockquote>
+
+<h2 id="classify">Retraining Comments</h2>
+<blockquote>
+<p>Because we make mistakes we allow a comment to be reclassified if the wrong result was returned.</p>
+<p>See <a href="classify.html">the API details</a>.</p>
+</blockquote>
+
+<h2 id="stats">Retrieving Statistics</h2>
+<blockquote>
+<p>When you <a href="testComment.html">test a comment</a> you <b>must</b> submit the URL to your site.  Using that same site parameter you may later retrieve the number of SPAM/OK comments you've submitted to this server.</p>
+<p>For full details please see the <a href="getStats.html">getStats</a> documentation.</p>
+</blockquote>
+
+<h2 name="plugins" id="plugins">Retrieving Plugins</h2>
+<blockquote>
+<p>A simple HTTP request to <a href="http://test.blogspam.net:9999/plugins">http://test.blogspam.net:9999/plugins</a> will return a JSON object.</p>
+<p>The object consists of an array of plugin names, along with brief details of what each plugin does, and who wrote it.</p>
+</blockquote>
+
+</blockquote>

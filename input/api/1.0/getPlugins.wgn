@@ -1,0 +1,24 @@
+title: BlogSpam.net :: Client API: v1.0 - getPlugins()
+----
+
+<blockquote><div style="border: 1px solid red;">
+<p><b>Please NOTE</b> - This documentation refers to the deprecated v1.0 API, you should prefer the <a href="/api/2.0">v2.0</a> API.</p>
+</div></blockquote>
+
+<blockquote>
+<h2>getPlugins()</h2>
+<blockquote>
+<p>The tests that our server performs upon incoming comments are plugin based.</p>
+<p>The available plugins are each invoked in turn to test the incoming comments, and their results will be used to decide if a comment is good or not.</p>
+<p>If you wish you may disable some plugins, as described in the <a href="testComment.html#options">testComment</a> documentation by passing an option string such as:</p>
+<pre>
+disable=badip
+</pre>
+<p>The <tt>getPlugins</tt> method is a simple one which just returns the names of the available plugins.</p>
+</blockquote>
+<h4 id="array" name="array">The Return Value</h4>
+<blockquote>
+<p>The return value of the function call is a single array containing the names of the plugins which are available for testing comments.</p>
+</blockquote>
+</blockquote>
+<p>&nbsp;</p>

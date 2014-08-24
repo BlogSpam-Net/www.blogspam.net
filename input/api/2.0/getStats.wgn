@@ -1,0 +1,52 @@
+title: BlogSpam.net :: Client API v2.0 - Get Statistics
+----
+
+<blockquote>
+
+<h2>About Statistics</h2>
+<blockquote>
+<p>We keep a running count of the number of "spam" and "ok" comments that pass through this server:</p>
+<ul>
+<li>Globally.</li>
+<li>For each site uses this service.</li>
+</ul>
+<p>When <a href="/api/2.0/testComment.html">submitting a comment for testing</a> the mandatory <tt>site</tt>-parameter is used to identify your site, i.e. the site upon which the comment has been left.</p>
+<p>If you ever wish to retrieve the count of spam/ok comments we've processed you can use that same site-data to retrieve your comment counts.</p>
+</blockquote>
+
+
+<h2>Retrieving Site Statistics</h2>
+<blockquote>
+<p>To retrieve your site statitics POST a JSON-encoded hash which contains the member <tt>site</tt>.  The site must match the site you use when you test comments, otherwise no data will be found.</p>
+<p>Here is a simple Ruby example:</p>
+<pre>
+#!/usr/bin/ruby
+
+require 'net/http'
+require 'json'
+
+# the hash we'll send
+str = {:site => "http://blog.steve.org.uk/" }.to_json;
+
+# The URL we'll submit to.
+uri   = URI.parse("http://test.blogspam.net:9999/stats")
+
+# Create the post body, for the host.
+http = Net::HTTP.new(uri.host,uri.port)
+req  = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
+req.body = str
+
+# send the request
+res = http.request(req)
+
+# Show the output
+puts res.body
+</pre>
+<p>Running this shows that my blog has currently submitted 2109 comments which were judged to be SPAM:</p>
+<pre>
+$ ruby stats.rb
+{"spam":"2109","ok":"745"}
+</pre>
+</blockquote>
+
+</blockquote>

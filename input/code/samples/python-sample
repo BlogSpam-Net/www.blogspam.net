@@ -1,0 +1,23 @@
+#!/usr/bin/python
+
+#
+# sudo apt-get install python-requests | python3-requests
+#
+import requests
+
+import json
+
+params = {'site': 'http://my.blog.example.com/',
+          'name': 'Bob SMith',
+          'email': 'bob@example.com',
+          'comment': 'This is my blog comment'}
+
+headers = {'Content-type': 'application/json',
+           'Accept': 'text/plain'}
+
+
+r = requests.post("http://test.blogspam.net:9999",
+                  data=json.dumps(params),
+                  headers=headers)
+
+print r.text

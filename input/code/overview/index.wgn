@@ -1,0 +1,23 @@
+title: BlogSpam.net :: Server Overview
+----
+
+<blockquote>
+	<h2>Overview Of The Server</h2>
+<blockquote>
+        <p>Although there are two different versions of <a href="/api/">our API</a> the broad overview of how they are implemented is pretty much identical.</p>
+        <p>In either case the handling can be summerized:</p>
+<ul>
+<li>A server is launched.</li>
+<li>All available plugins are loaded.</li>
+<li>The server listens for incoming comment-submissions
+<ul>
+<li>For each submission we execute each of the plugins in turn.</li>
+<li>If a plugin determines the comment to be definitely SPAM further processing is halted, and that result is returned.</li>
+<li>If a plugin determines the comment to be definitely OK further processing is halted, and that result is returned.</li>
+<li>If all plugins have been executed and no result has been decided we believe the comment is OK.</li>
+</ul></li>
+<li>The per-site and global statistics are updated.</li>
+</ul>
+</blockquote>
+</blockquote>
+<p>&nbsp;</p>

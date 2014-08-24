@@ -1,0 +1,27 @@
+title: BlogSpam.net :: Service Users
+----
+
+<blockquote>
+	<h2>Users of this service</h2>
+        <blockquote>
+        <p>Because we don't require a "key" or any other form of registration to use our service <i>anybody</i> may test and reject spam comments.</p>
+        <p>However it is always nice to see the type of users a service has. If you are a user who would like to be listed here please do <a href="/contact/">get in touch</a></p>
+        <h3>Currently Known Users</h3>
+        <blockquote>
+<ul>
+<li>Blogs
+<ul>
+<li><a href="http://amrmostafa.org">Amr Mostafa's Weblog</a></li>
+<li><a href="http://www.christoph-egger.org/">Christoph Egger's Weblog</a></li>
+<li><a href="http://blog.grossmeier.net/">Greg Grossmeier's blog</a></li>
+<li><a href="http://www.debian-administration.org/">Debian-Adminstration.org: System Administrator Resources</a>.</li>
+</ul></li>
+<li>Wikis
+<ul>
+<li><a href="http://www.hants.lug.org.uk/cgi-bin/wiki.pl">HantsLUG Wiki</a></li>
+</ul></li>
+</ul>
+<p>(The software isn't really designed for use protecting Wiki installations, but with a <a href="/api/testComment.html#options">little customization</a> it works well.)</p>
+        </blockquote>
+</blockquote>
+</blockquote>

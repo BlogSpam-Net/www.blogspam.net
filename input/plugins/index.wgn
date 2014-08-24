@@ -1,0 +1,62 @@
+title: BlogSpam.net :: Client Plugins
+plugin_page: 1
+----
+
+<blockquote>
+<h2>BlogSpam Plugins for clients</h2>
+<blockquote>
+
+        <h3 id="wordpress">Wordpress Blogspam Plugin</h3>
+        <blockquote>
+          <p>To kick-start development I wrote a simple wordpress plugin which would automatically mark submitted comments as spam, after testing via this service.</p>
+          <p>The plugin is <a href="http://wordpress.org/plugins/blogspam/">listed in the Wordpress Plugin list</a>, and can be installed directly from your administration area.</p>
+          <p>The code itself is hosted in <a href="https://github.com/skx/blogspam-wordpress-plugin">a github repository</a>, if you prefer you can download the latest version directly <a href="https://github.com/skx/blogspam-wordpress-plugin/archive/master.zip">from github</a>.</p>
+
+          <h4>Installing The Plugin</h4>
+          <p>To install the plugin simply unzip the downloaded .zip file into the <tt>wp-content/plugins/</tt> directory of your wordpress installation, and then activate from your admin panel.</p>
+          <p>Once activated incoming comments will be tested, and any that we mark as spam will automatically go straight into your spam queue - where you can examine them if you wish.</p>
+
+          <h4>Plugin Configuration</h4>
+          <p>The plugin will add a blogspam-page to your Wordpress options, which allows you to configure:</p>
+<ul>
+<li>The server to test against.
+<ul>
+<li>Unless you're running your own blogspam instance this should be set to <tt>http://test.blogspam.net:9999/</tt>.</li>
+</ul></li>
+<li>Any server options.
+<ul>
+<li>These will be blank by default.</li>
+<li>You can update as per the <a href="/api/2.0/testComment.html#options">available options</a> if you wish.</li>
+</ul></li>
+</ul>
+          <p>The configuration page will also show you the count of comments permitted, or rejected, via this service.</p>
+        </blockquote>
+
+        <h3 id="drupal">Drupal Plugin</h3>
+        <blockquote>
+          <p><a href="http://www.chrissearle.org/">Chris Searle</a> contributed a plugin for Drupal, which works in a similar way to the Wordpress one - comments will be rejected automatically once it is enabled.</p>
+          <p>The Drupal plugin is hosted upon the Drupal site:</p>
+          <ul>
+          <li><a href="http://drupal.org/project/blogspam">http://drupal.org/project/blogspam</a></li>
+          </ul>
+        </blockquote>
+
+        <h3 id="ikiwiki">ikiwiki Plugin</h3>
+        <blockquote>
+        <p><a href="http://kitenet.net/~joey/">Joey Hess</a> created a plugin for his <a href="http://ikiwiki.info">ikiwiki</a> package, which you can find hosted on the ikiwiki website:</p>
+        <ul>
+        <li><a href="http://ikiwiki.info/plugins/blogspam/">http://ikiwiki.info/plugins/blogspam/</a></li>
+        </ul>
+        </blockquote>
+
+	<h3 id="identica">Identi.ca</h3>
+	<blockquote>
+	<p>The popular social microblogging service, like twitter, comes with native support for our service.</p>
+	</blockquote>
+
+	<h3>Write Your Own Plugin?</h3>
+        <blockquote>
+        <p>If you use a blog engine, or forum, which isn't listed here you might have to write your own plugin to test incoming comments -  hopefully the <a href="/api/">API documentation</a>, and <a href="/code/samples/">sample code</a> should be sufficient reference material to get started - but if you have any questions please do <a href="/contact/">get in touch</a>.</p>
+        </blockquote>
+</blockquote>
+</blockquote>

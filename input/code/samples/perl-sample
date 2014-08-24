@@ -1,0 +1,44 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use JSON;
+use LWP::Simple;
+
+#
+#  The comment we're testing.  We store this in a hash, but submit
+# the JSON-encoded version.
+#
+my %params = ( ip      => "192.168.1.1",
+               site    => "http://exammple.com",
+               comment => "You suck!"
+             );
+
+#
+#  Serialize the parameters
+#
+my $json = encode_json( \%params );
+
+#
+#  We're going to use a HTTP POST.
+#
+my $req = HTTP::Request->new( 'POST',
+                              "http://test.blogspam.net:9999/"  );
+$req->header( 'Content-Type' => 'application/json' );
+$req->content( $json );
+
+#
+#  Send the request.
+#
+my $lwp      = LWP::UserAgent->new;
+my $response = $lwp->request( $req );
+
+#
+#  Show the result which was received.
+#
+my $code   = $response->code;
+my $result = $response->decoded_content;
+
+print "Code: $code - $result\n";
+

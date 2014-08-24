@@ -1,0 +1,24 @@
+title: BlogSpam.net :: Client API
+api_page: 1
+----
+
+
+<blockquote>
+
+<h2>Client API</h2>
+<blockquote>
+<p>This section of our site documents the application programmer interface (API) you must comply with to make requests to our service.</p>
+<p>There are two versions of our API:</p>
+<dl>
+<dt><a href="/api/2.0">v2.0 - HTTP + JSON</a></dt>
+<dd><p>This is the current API, and is the preferred means of using our service.</p></dd>
+<dt><a href="/api/1.0">v1.0 - The legacy XML-RPC API</a></dt>
+<dd><p>This is the original API which we started using in 2009.  Until recently it was the only API we presented to remote clients.</p>
+    <p>The XML-RPC API will be retired in the next couple of years, until then this legacy API is still available, but we recommend all users switch to the JSON-API.</p>
+   </dd>
+</dl>
+</blockquote>
+<p>&nbsp;</p>
+	</blockquote>
+	</blockquote>
+	</blockquote>

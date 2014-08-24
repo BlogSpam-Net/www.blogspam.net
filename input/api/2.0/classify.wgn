@@ -1,0 +1,19 @@
+Title: BlogSpam.net :: Client API v2.0 - Classifying Comments
+----
+
+<h2>Reclassifing Comments</h2>
+<blockquote>
+<p>Our API is used to test comments for spam.  Sometimes we make mistakes, so to deal with that we allow a comment to be resubmitted for training.</p>
+<p>To submit a comment for reclassification POST a JSON-encoded hash to the following URL:</p>
+<ul>
+<li><tt>http://test.blogspam.net:9999/classify</tt></li>
+</ul>
+<p>The hash you submit should be <b>exactly</b> the same as that used for <a href="testComment.html">classifyComment</a>, with the extra key "train".</p>
+
+<table border="1" cellpadding="5" cellspacing="0">
+<tr  BGCOLOR="#CCCCFF"><th>train value</th><th>Description</th></tr>
+<tr><td>spam</td><td>The comment should be trained as SPAM.</td></tr>
+<tr><td>ok</td><td>The comment should not have been rejected.</td></tr>
+</table>
+
+</blockquote>

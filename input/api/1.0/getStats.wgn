@@ -1,0 +1,43 @@
+title: BlogSpam.net :: Client API v1.0 - getStats()
+----
+
+<blockquote><div style="border: 1px solid red;">
+<p><b>Please NOTE</b> - This documentation refers to the deprecated v1.0 API, you should prefer the <a href="/api/2.0">v2.0</a> API.</p>
+</div></blockquote>
+
+<blockquote>
+<h2>getStats</h2>
+<blockquote>
+<p>The <tt>getStats</tt> function of <a href="/api/">our API</a> allows you to see how many comments have been blocked, or accepted, upon your site via our service.</p>
+<p>Our <a href="/xml/stats">global statistics</a> are available publicly, although they are reset every few months as part of the on-going maintainance and upgrade process..</p>
+</blockquote>
+
+
+<h4 id="string" name="string">The Input Paramater</h4>
+<blockquote>
+<p>The <tt>getStats</tt> function accepts a single parameter, which is an XML::RPC string.  (XML-RPC mandates the format of several parameter types such as "string", "int", "struct".)</p>
+<p>The string you pass in should be the URL of your site, and would match that automatically passed via <A href="/plugins/">the plugin</a> you're using.</p>
+
+<h4>Example</h4>
+<blockquote>
+<p>The following would be examples:</p>
+</blockquote>
+<pre>
+<code>
+string =&gt; http://debian-administration.org
+getStats( "http://www.debian-administration.org" );
+</code>
+</pre>
+</blockquote>
+
+
+<h4 id="struct" name="struct">The Return Value</h4>
+<blockquote>
+<p>The return value of the function call is a single struct, with two members.  (Remember that XML-RPC mandates a couple of different datatypes.  Think of a <tt>struct</tt> as a hash, or named array).</p>
+<table>
+<tr><td>ok</td><td>An integer count of the comments approved.</td></tr>
+<tr><td>spam</td><td>An integer count of the comments rejected.</td></tr>
+</table>
+</blockquote>
+</blockquote>
+<p>&nbsp;</p>

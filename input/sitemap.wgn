@@ -1,0 +1,22 @@
+title: BlogSpam.net :: Sitemap
+----
+
+<blockquote>
+<h2>Site map</h2>
+<blockquote>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/privacy.html">Privacy Policy</a></li>
+<li><a href="/contact/">Contact us</a></li>
+<li><a href="/api/">API documentation</a></li>
+<li><a href="/code/">Service Source Code</a>
+<ul>
+<li><a href="/code/samples/">Sample client source code</a></li>
+<li><a href="/code/overview/">Overview of the server.</a></li>
+</ul></li>
+<li><a href="/faq/">Frequently Asked Questions</a></li>
+<li><a href="/plugins/">Plugins for your blog</a></li>
+<li><a href="/users/">People using this service</a></li>
+</ul>
+</blockquote>
+</blockquote>

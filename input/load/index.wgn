@@ -1,0 +1,71 @@
+title: BlogSpam.net - Blog & Forum SPAM Detection
+load_page: 1
+----
+
+
+
+<blockquote>
+<h2>Statistics</h2>
+<blockquote>
+
+<p>The following chart shows the cummulative count of "SPAM" vs "OK" comment results we've returned to callers over the past 14 days.</p>
+<div id="chart1" style="height:400px; width:800px;"></div>
+</blockquote>
+</blockquote>
+
+
+
+<script class="code" type="text/javascript">
+
+// Our ajax data renderer which here retrieves a text file.
+// it could contact any source and pull data, however.
+// The options argument isn't used in this renderer.
+var ajaxDataRenderer = function(url, plot, options) {
+    var ret = null;
+    $.ajax({
+      // have to use synchronous here, else the function
+      // will return before the data is fetched
+      async: false,
+      url: url,
+      dataType:"json",
+      success: function(data) {
+        ret = data;
+      }
+    });
+    return ret;
+};
+
+
+function load_load_graph()
+{
+
+    var host = $("#host option:selected").val();
+    var name = $("#host option:selected").text();
+
+    $("#chart1").html( "");
+    plo12 = $.jqplot('chart1', "/cgi-bin/load.cgi", {
+        title: 'SPAM/HAM counts: ',
+        dataRenderer: ajaxDataRenderer,
+        legend: { show:true, location: 'w',
+         labels:['spam', 'ok'],
+        },
+    });
+}
+
+$(document).ready(function(){
+
+    load_load_graph();
+
+
+});
+
+</script>
+
+<script type="text/javascript" src="jquery.jqplot.min.js"></script>
+<script type="text/javascript" src="plugins/jqplot.canvasTextRenderer.min.js"></script>
+<script type="text/javascript" src="plugins/jqplot.canvasAxisTickRenderer.min.js"></script>
+<script type="text/javascript" src="plugins/jqplot.categoryAxisRenderer.min.js"></script>
+<script type="text/javascript" src="plugins/jqplot.barRenderer.min.js"></script>
+<script type="text/javascript" src="plugins/jqplot.pieRenderer.min.js"></script>
+	</div>
+

@@ -1,0 +1,46 @@
+title: BlogSpam.net - Blog & Forum SPAM Detection
+home_page: 1
+----
+
+<blockquote>
+<h2>BlogSpam.net - Blog &amp; Forum SPAM Detection</h2>
+<blockquote>
+<p>The blogspam site exists to provide a service which allows you to test whether a submitted blog/forum comment is SPAM or not, in real-time.</p>
+<p>We can identify many common SPAM characteristics and using them allow comments to be blocked - cutting down on the SPAM that might otherwise affect your site.</p>
+</blockquote>
+</blockquote>
+
+<p></p>
+<blockquote>
+<h2>Why do we care?</h2>
+<blockquote>
+<p>This site was created by <a href="http://www.steve.org.uk/">Steve Kemp</a> to consolidate the SPAM detection he was previously forced to maintain on multiple sites - most notabily the <a href="http://www.debian-administration.org/">Debian Administration</a> website.</p>
+<p>By moving the SPAM-detection to one central location, behind a <a href="/api/">simple API</a>, it is now possible to make a change in one location and see improvements in all the sites that use the service.</p>
+<p>Having additional users helps to encourage <a href="/contact/">useful feedback</a>, allowing further improvements to be added over time.</p>
+</blockquote>
+</blockquote>
+
+<blockquote>
+<h2>Entirely Open Source</h2>
+<blockquote>
+<p><a href="/code/">The code</a> which provides our service is available for your own use, under the terms of the popular GNU General Public License.</p>
+<p>In addition to the code which runs this service, there are also several <a href="/plugins/">plugins for popular platforms</a> including Drupal, Ikiwiki, &amp; Wordpress.</p>
+<p>Open Source software probably isn't new to you, but if it is you I shall summerize it like so:</p>
+<ul>
+<li>You may download it, free of charge.</li>
+<li>You may make changes to it, free of charge.</li>
+<li>You can run your own server and charge people to access it, free of charge.</li>
+</ul>
+<p>The main restriction is that if you give somebody the code they have the same rights, you cannot change the code, give it to
+somebody else, and then demand they cannot share it or further change it.</p>
+</blockquote>
+</blockquote>
+
+<blockquote>
+<h2>Recent News - March 2014</h2>
+<blockquote>
+ <p>All of our <a href="/code/samples/">sample code</a> has been updated to use the <a href="/api/2.0">API v2.0</a> we present to the outside world.</p>
+ <p>The <a href="/plugins/">Wordpress plugin</a> is once again listed in the <a href="http://wordpress.org/plugins/blogspam/">wordpress plugin directory</a>, making it more likely to be discovered and updated.</p>
+</blockquote>
+
+</blockquote>

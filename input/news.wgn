@@ -1,0 +1,8 @@
+title: Wordpress Plugin News
+layout: minimal.layout
+----
+
+<dl>
+<dt>7th December 2013</dt>
+<dd><p>The plugin has been updated to show some recent news in the admin page, and <a href="http://wordpress.org/plugins/blogspam/">relisted in the wordpress plugin database</a>.</p></dd>
+</dl>

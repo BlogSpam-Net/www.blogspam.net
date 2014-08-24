@@ -1,0 +1,35 @@
+title: BlogSpam.net :: Client API v1.0 - classifyComment()
+----
+
+
+<blockquote><div style="border: 1px solid red;">
+<p><b>Please NOTE</b> - This documentation refers to the deprecated v1.0 API, you should prefer the <a href="/api/2.0">v2.0</a> API.</p>
+</div></blockquote>
+
+<blockquote>
+<h2>classifyComment</h2>
+<blockquote>
+<p>The <tt>classifyComment</tt> function of <a href="/api/">our API</a> allows you to submit a comment for training, if it was misidentified as either spam, or ham.</p>
+</blockquote>
+
+<h4 id="struct" name="struct">The Input Paramater</h4>
+<blockquote>
+<p>The <tt>classifyComment</tt> function accepts a single parameter, which is an XML::RPC struct.  (XML-RPC mandates the format of several parameter types such as "string", "int", "struct".  In this case consider a "struct" analagous to a perl hash or a PHP array).</p>
+<p>The structure you pass must have the following two required members - any other members as documented in the <a href="testComment.html">testComment()</a> method will also be accepted.</p>
+<table border="1" cellpadding="5" cellspacing="0">
+<tr  BGCOLOR="#CCCCFF"><th>Name</th><th>Description</th><th></th></tr>
+<tr><td>comment</td><td>The body of the submitted comment.</td><td><b>required</b></td></tr>
+<tr><td>train</td><td>Either <tt>ok</tt> or <tt>spam</tt>, to control how the comment is to be trained..</td><td><b>required</b></td></tr>
+</table>
+
+<p><b>NOTE</b>: In an ideal world you'd pass exactly the same structure as used in <tt>classifyComment()</tt> to this method.</p>
+</blockquote>
+
+
+<h4 id="string" name="string">The Return Value</h4>
+<blockquote>
+<p>The return value of the function call is a single string.  The content of this return value will indicate whether training took place or not.</p>
+<p>The return value may be safely ignored.</p>
+</blockquote>
+</blockquote>
+</blockquote>

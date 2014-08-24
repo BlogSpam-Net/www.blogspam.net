@@ -1,0 +1,57 @@
+title:BlogSpam.net :: Frequently Asked Questions
+faq_page: 1
+----
+
+<blockquote>
+<h2>BlogSpam.net - Frequently Asked  Questions</h2>
+<blockquote>
+<p>Here we answer the questions that are asked multiple times, or which we anticipate users being interested in.</p>
+
+		<blockquote>
+                <dl>
+                <dt>Where is the code behind the service?</dt>
+                <dd><p>The code which powers this server has always been released as open source software, and you can gain access <a href="/code/">the code</a>.</p>
+                <p>If you wish to run your own internal comment-testing service you should expect to be able to so pretty easily.</p>
+                </dd>
+                <dt>How is the server code licensed?</dt>
+                <dd><p>The code behind the server component of the software is licensed under <b>both</b> the Perl Artistic license, and the GNU General Public License, version 2.x</p>
+		    <p>Pick whichever license you prefer.</p>
+<p>&nbsp;</p>
+                </dd>
+
+                <dt>How does the service work?</dt>
+                <dd><p>There is an <a href="/code/overview/">overview of the server code</a> which explains broadly how the code functions.</p><p>&nbsp;</p></dd>
+
+                <dt>Does code I write, using this API,  have to be open source?</dt>
+                <dd><p>Absolutely not.</p>
+                  <p>If you have a closed-source application, or platform, which accepts user comments you're still welcome to <a href="/api/">interface with our API</a>.</p>
+<p>&nbsp;</p>
+                  </dd>
+
+                <dt>Will you write a plugin for XXX?</dt>
+                <dd><p>If the platform is simple to code for we'd certainly welcome suggestions, but we would prefer to link to the code other people have written!</p>
+                  <p>Right now we have only three plugins and it is hoped others will contribute more:</p>
+<ul>
+<li><a href="/plugins/#wordpress">Wordpress BlogSpam Plugin</a></li>
+<li><a href="/plugins/#drupal">Drupal BlogSpam Plugin</a></li>
+<li><a href="/plugins/#ikiwiki">Ikiwiki BlogSpam Plugin</a></li>
+</ul>
+                <p>Hopefully the <a href="/code/samples/">sample code</a> should be sufficient to demonstrate how <a href="/api/">the API</a> is invoked.</p>
+	<p>&nbsp;</p>
+                </dd>
+
+                <dt>How can I see my rejected comments?</dt>
+                <dd><p>The <a href="/plugins/">plugin for your platform</a> should move any rejected comment straight into the spam queue, and also show you how many comments it has rejected or allowed.</p>
+                <p>If you wish to see how many comments our service has accepted &amp; rejected globally you may view our <a href="/xml/stats/">XML feed</a>.</p>
+<p>&nbsp;</p>
+                </dd>
+                <dt>Do you have a privacy policy?</dt>
+                <dd><p>As part of our testing we receive the comments that are submitted to your site, forum, or blog.</p>
+                <p>Submitted comments may contain privileged information - although it is true to say the intention of the submitter is that the comment will be posted publically their IP and email address, etc, shouldn't be disclosed.</p>
+                <p><a href="/privacy.html">This is our privacy policy</a>.</p>
+<p>&nbsp;</p>
+	</dd>
+                </dl>
+</blockquote>
+</blockquote>
+</blockquote>

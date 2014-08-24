@@ -1,0 +1,8 @@
+<html>
+  <head>
+    <title><!-- tmpl_var name='title' escape='html' --></title>
+  </head>
+  <body>
+    <!-- tmpl_var name='content' -->
+  </body>
+</html>

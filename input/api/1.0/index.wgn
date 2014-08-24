@@ -1,0 +1,103 @@
+title: BlogSpam.net :: Client API v1.0
+----
+
+
+<blockquote><div style="border: 1px solid red;">
+<p><b>Please NOTE</b> - This documentation refers to the deprecated v1.0 API, you should prefer the <a href="/api/2.0">v2.0</a> API.</p>
+</div></blockquote>
+
+<h2>Connection Details</h2>
+<blockquote>
+<p>Unless you've downloaded the <a href="/code/">server source code</a> and are running your own local installation you should submit your to the following host:</p>
+<blockquote>
+<table>
+<tr><td><b>Hostname</b></td><td><tt>test.blogspam.net</tt></td></tr>
+<tr><td><b>Port</b></td><td><tt>8888</tt></td></tr>
+<tr><td><b>Path</b></td><td><tt>/</tt></td></tr>
+</table>
+</blockquote>
+<p>If your XML-RPC environment requires you to specify an URL then you should use the following:</p>
+<ul>
+<li><tt>http://test.blogspam.net:8888/</tt></li>
+</ul>
+</blockquote>
+
+<h2>Available Client Methods</h2>
+<blockquote>
+<p>The RPC service we run exposes the following methods, which combined make up our API:</p>
+<blockquote>
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary="">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2">
+
+<b><a href="testComment.html">testComment</a></b></font></td>
+</tr>
+<tr bgcolor="white" CLASS="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="testComment.html#string" title="return value: string">string</a>&nbsp;</code></font></td>
+<td><code><b>testComment</b>(&nbsp;<a href="testComment.html#struct" title="input parameter: struct">struct</a>&nbsp;)</code>
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Test the content of the comment encapsulated in the given structure and return a string describing the result.</td>
+</tr>
+
+</table>
+
+<p>&nbsp;</p>
+
+
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary="">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2">
+
+<b><a href="classifyComment.html">classifyComment</a></b></font></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="classifyComment.html#string" title="return value: string">string</a>&nbsp;</code></font></td>
+<td><code><b>classifyComment</b>(&nbsp;<a href="classifyComment.html#struct" title="input parameter: struct">struct</a>&nbsp;)</code>
+
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Train the given comment as spam, or ham, in the case of error.</TD>
+</tr>
+
+</table>
+
+<p>&nbsp;</p>
+
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary="">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2">
+
+<b><a href="getPlugins.html">getPlugins</a></b></font></td>
+</tr>
+<tr bgcolor="white" CLASS="TableRowColor">
+<td align="right" valign="top" width="1%"><font size="-1">
+<code>&nbsp;<a href="getPlugins.html#array" title="return value: array">array</a>&nbsp;</code></font></td>
+<td><code><b>getPlugins</b>(&nbsp;&nbsp;)</code>
+
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the list of server-side testing plugins.</td>
+</tr>
+
+</table>
+<p>&nbsp;</p>
+
+<table border="1" width="100%" cellpadding="3" cellspacing="0" summary="">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2">
+
+<b><a href="getStats.html">getStats</a></b></font></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td align="right" valign=""top" width="1%"><font size="-1">
+<code>&nbsp;<a href="getStats.html#struct" title="return value: struct">struct</a>&nbsp;</code></font></td>
+<td><code><b>getStats</b>(&nbsp;<a href="getStats.html#string" title="input parameter: string">string</a>&nbsp;)</code>
+
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the statistics for the current site.</td>
+</tr>
+
+</table>
+<p>&nbsp;</p>
+	</blockquote>
+	</blockquote>

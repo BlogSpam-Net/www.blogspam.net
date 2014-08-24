@@ -1,0 +1,83 @@
+Title: BlogSpam.net :: Client API v2.0 - Testing Comments
+----
+
+<h2>Testing Comments</h2>
+<blockquote>
+<p>To test a comment against our service you should POST a JSON-encoded hash to the following URL:</p>
+<ul>
+<li><tt>http://test.blogspam.net:9999/</tt></li>
+</ul>
+<p>The hash will have keys/values based upon the comment the user has submitted.</p>
+</blockquote>
+
+<h2 id="parameters" name="parameters">Parameters</h2>
+<blockquote>
+<table border="1" cellpadding="5" cellspacing="0">
+<tr  BGCOLOR="#CCCCFF"><th>Name</th><th>Description</th><th></th></tr>
+<tr><td>comment</td><td>The body of the submitted comment.</td><td><b>required</b></td></tr>
+<tr><td>ip</td><td>The IP address the comment was submitted from.</td><td><b>required</b></td></tr>
+<tr><td>agent</td><td>The user-agent the submitter supplied.</td><td></td></tr>
+<tr><td>email</td><td>The email address the submitter supplied.</td><td></td></tr>
+<tr><td>link</td><td>The homepage link the submitter supplied.</td><td></td></tr>
+<tr><td>name</td><td>The name the submitter supplied.</td><td></td></tr>
+<tr><td>options</td><td><a href="#options">Additional options</a> to control how things should work.</td><td></td></tr>
+<tr><td>site</td><td>A link to <i>your</i> site.  This same parameter is also used for the <a href="getStats.html">getStats()</a> function.</td><td><b>required</b></td></tr>
+<tr><td>subject</td><td>The subject/title the submitter supplied.</td><td></td></tr>
+<tr><td>version</td><td>The version of the plugin that you're using, if any.</td><td></td></tr>
+</table>
+</blockquote>
+
+<h2 id="options" name="options">Customizing The Testing</h4>
+<blockquote>
+<p>In the <a href="#parameters">parameter</a> table above you'll notice there is an "<tt>options</tt>" parameter.  You may submit a number of flags in this field to affect the testing of your submitted comment.</p>
+<p>Set the value of this parameter to a comma-separated string - with the following possible components:</p>
+
+<table border="1" cellpadding="5" cellspacing="0">
+<tr BGCOLOR="#CCCCFF"><th>Name</th><th>Description</th><th>Default</th></tr>
+<tr><td>blacklist=1.2.3.4</td><td>Blacklist the given IP (*)</td><td></td></tr>
+<tr><td>exclude=foo</td><td>Don't run the plugin test "foo" (**)</td><td></td></tr>
+<tr><td>fail</td><td>If you pass this option your query will always return a SPAM result.  <br/>Useful for testing.</td><td></td></tr>
+<tr><td>whitelist=1.2.3.4</td><td>Whitelist the given IP (*)</td><td></td></tr>
+<tr><td>mandatory=subject</td><td> Specify that the given field should always be present.<br/>See the table on <a href="#struct">above</a> for valid field names.</td><td></td></tr>
+<tr><td>max-links=5</td><td>The comment body must  contain fewer than 5 links</td><td>10</td></tr>
+<tr><td>max-size=2k</td><td>The comment body must be smaller than 2k to be approved.</td><td></td></tr>
+<tr><td>min-size=2k</td><td>The comment body must be at least 2k to be approved.</td><td></td></tr>
+<tr><td>min-words=10</td><td>The comment body must contain at least 10 words to be approved.</td><td>4</td></tr>
+</table>
+<p>[*] - You may use either a literal IP address ("192.168.1.1") or a CIDR range ("192.168.1.0/8").</p>
+<p>[**] - You can find the list of plugin names via calling the <a href="/api/2.0/#plugins">get plugins endpoint</a>.</p>
+
+</blockquote>
+
+<h2>Results</h2>
+<blockquote>
+<p>The result will be returned as a JSON-encoded hash, that hash will contain the following keys:</p>
+<table border="1">
+<table border="1" cellpadding="5" cellspacing="0">
+<tr  BGCOLOR="#CCCCFF"><th>Key</th><th>Meaning</th></tr>
+<tr><td><tt>result</tt></td>
+    <td><p>The result of the test - one of "ERROR", "OK" or "SPAM".</p></td></tr>
+<tr><td><tt>reason</tt></td>
+    <td><p>This field might be present in any response, but it is particularly useful if the tested result result was <tt>SPAM</tt> or <tt>ERROR</tt>, where it can be expected to describe (briefly) why the comment was rejected.</p></td></tr>
+<tr><td><tt>blocker</tt></td>
+    <td><p>This is a field that describes the name of the plugin, if any, which rejected a comment.  Plugins can be disabled selectively when you're submitting comments so this information is potentially useful.</p></td></tr>
+<tr><td><tt>version</tt></td>
+    <td><p>The version of the API.</p></td></tr>
+</table>
+<p>Here are two example results:</p>
+<p>Spam:</p>
+<blockquote>
+<pre>
+{"result":"SPAM",
+ "reason":"Posting links listed in surbl.org",
+ "blocker":"20-ip.js",
+ "version":"2.0"}
+</pre>
+</blockquote>
+<p>OK:</p>
+<blockquote>
+<pre>
+{"result":"OK",
+ "version":"2.0"}
+</pre>
+</blockquote>

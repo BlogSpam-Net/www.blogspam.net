@@ -1,0 +1,8 @@
+User-agent: *
+Crawl-delay: 10
+Disallow: /cgi-bin
+Disallow: /stats
+
+User-agent: MJ12bot
+Disallow: /
+

@@ -1,0 +1,78 @@
+title: BlogSpam.net :: Client API v1.0 - testComment()
+----
+
+<blockquote><div style="border: 1px solid red;">
+<p><b>Please NOTE</b> - This documentation refers to the deprecated v1.0 API, you should prefer the <a href="/api/2.0">v2.0</a> API.</p>
+</div></blockquote>
+
+<blockquote>
+<h2>testComment</h2>
+<blockquote>
+<p>The <tt>testComment</tt> function of <a href="/api/">our API</a> allows you to test whether a submitted comment is SPAM or not.</p>
+</blockquote>
+
+<h4 id="struct" name="struct">The Input Paramater</h4>
+<blockquote>
+<p>The <tt>testComment</tt> function accepts a single parameter, which is an XML::RPC struct.  (XML-RPC mandates the format of several parameter types such as "string", "int", "struct".  In this case consider a "struct" analagous to a perl hash or a PHP array).</p>
+<p>The structure you pass may have the following members.  Members which are not recognised will be ignored.</p>
+
+<table border="1" cellpadding="5" cellspacing="0">
+<tr  BGCOLOR="#CCCCFF"><th>Name</th><th>Description</th><th></th></tr>
+<tr><td>comment</td><td>The body of the submitted comment.</td><td><b>required</b></td></tr>
+<tr><td>ip</td><td>The IP address the comment was submitted from.</td><td><b>required</b></td></tr>
+<tr><td>agent</td><td>The user-agent the submitter supplied.</td><td></td></tr>
+<tr><td>email</td><td>The email address the submitter supplied.</td><td></td></tr>
+<tr><td>link</td><td>The homepage link the submitter supplied.</td><td></td></tr>
+<tr><td>name</td><td>The name the submitter supplied.</td><td></td></tr>
+<tr><td>options</td><td><a href="#options">Additional options</a> to control how things should work.</td><td></td></tr>
+<tr><td>site</td><td>A link to <i>your</i> site - this parameter is needed for the <a href="getStats.html">getStats()</a> function to be useful.</td><td></td></tr>
+<tr><td>subject</td><td>The subject/title the submitter supplied.</td><td></td></tr>
+<tr><td>version</td><td>The version of the plugin that you're using, if any.</td><td></td></tr>
+</table>
+
+</blockquote>
+
+
+<h4 id="string" name="string">The Return Value</h4>
+<blockquote>
+<p>The return value of the function call is a single string.  This string will contain one of three values:</p>
+<table>
+<tr><td>ERROR:[message]</td><td>There was a fatal error during the processing of your request.</td></tr>
+<tr><td>OK:[message]</td><td>The submitted content was judged to be non-spam.</td></tr>
+<tr><td>SPAM:[reason]</td><td>The submitted content was judged to be spam.</td></tr>
+</table>
+<p>The results may return an optional reason, separated by a colon (:) character (if there is no reason the colon will still be present).  This extra detail might be missing, but if present should provide useful diagnostic information.</p>
+<p>If you receive a timeout, or other transient failure, it is up to you to decide how to handle this.  Personally if I were <a href="/plugins/">coding a new plugin</a> I'd simply allow the comment - rather than retrying.</p>
+</blockquote>
+
+<h4 id="options" name="options" style="width:100%; border-bottom: 1px solid black;">Customizing The Testing</h4>
+<blockquote>
+<p>In the <a href="#struct">input parameter</a> table above you'll notice there is an "<tt>options</tt>" parameter.  You may submit a number of flags in this field to affect the testing of your submitted comment.</p>
+<p>Set the value of this parameter to a comma-separated string - with the following possible components:</p>
+
+<table border="1" cellpadding="5" cellspacing="0">
+<tr BGCOLOR="#CCCCFF"><th>Name</th><th>Description</th><th>Default</th></tr>
+<tr><td>blacklist=1.2.3.4</td><td>Blacklist the given IP (*)</td><td></td></tr>
+<tr><td>exclude=foo</td><td>Don't run the plugin test "foo" (**)</td><td></td></tr>
+<tr><td>fail</td><td>If you pass this option your query will always return a SPAM result.  <br/>Useful for testing.</td><td></td></tr>
+<tr><td>whitelist=1.2.3.4</td><td>Whitelist the given IP (*)</td><td></td></tr>
+<tr><td>mandatory=subject</td><td> Specify that the given field should always be present.<br/>See the table on <a href="#struct">above</a> for valid field names.</td><td></td></tr>
+<tr><td>max-links=5</td><td>The comment body must  contain fewer than 5 links</td><td>10</td></tr>
+<tr><td>max-size=2k</td><td>The comment body must be smaller than 2k to be approved.</td><td></td></tr>
+<tr><td>min-size=2k</td><td>The comment body must be at least 2k to be approved.</td><td></td></tr>
+<tr><td>min-words=10</td><td>The comment body must contain at least 10 words to be approved.</td><td>4</td></tr>
+</table>
+
+<p><b>Multiple Values</b></p>
+<p>Values may be specified multiple times.  For example you might wish to blacklist the two IP addresses <tt>1.2.3.4</tt> and <tt>8.7.6.5</tt>  This could be done by passing an "options" string of:</p
+<Pre>
+blacklist=1.2.3.4,blacklist=8.7.6.5
+</pre>
+<blockquote>
+<p>[*] - You may use either a literal IP address ("192.168.1.1") or a CIDR range ("192.168.1.0/8").</p>
+<p>[**] - You can find the list of plugin names via calling the <a href="getPlugins.html">getPlugins</a> method, or looking at <a href="/code/">our source code</a>.</p>
+</blockquote>
+</blockquote>
+
+</blockquote>
+</blockquote>
