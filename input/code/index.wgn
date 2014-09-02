@@ -6,26 +6,14 @@ code_page: 1
 <h2>BlogSpam.net - Our Source Code</h2>
 
 <blockquote>
-<p>There are two versions of our server code, which correspond to the two different releases of <a href="/api/">our API</a>:</p>
-<dl>
-<dt>The JSON API</dt>
-<dd><p>The JSON version of our API is implemented via a <a href="http://nodejs.org/">node.js</a> server, and this code along with the plugins, can be found hosted upon github:</p>
+<p>Our JSON-based API is implemented via a simple <a href="http://nodejs.org/">node.js</a> server, and this code along with the plugins it loads, can be found hosted upon github:</p>
 <ul>
-<li><a href="http://github.com/skx/blogspam.js">http://github.com/skx/blogspam.js</a></li>
+<li><a href="http://github.com/skx/blogspam.js">http://github.com/skx/blogspam.js</a>
+<ul>
+<li><a href="http://git.steve.org.uk/blogspam/blogspam.js">Personal mirror</a></li>
+</ul></li>
 </ul>
 <p>This is the current and preferred API and contributed plugins/patches are welcome.</p>
-</dd>
-<dt>Legacy XML-RPC Server Code</dt>
-<dd>
-<p>Our legacy server is implemented in Perl, and the code itself is distributed upon the popular Perl distribution site CPAN:</p>
-<ul>
-<li><a href="http://search.cpan.org/dist/Blog-Spam/">http://search.cpan.org/dist/Blog-Spam/</a></li>
-</ul>
-<p>If you're interested in tracking development, or wish to submit fixes or additions you're encouraged to examine my own personal Mercurial repository:</p>
-<ul>
-<li><a href="http://repository.steve.org.uk/cgi-bin/hgwebdir.cgi/cpan/file/tip/Blog-Spam/">http://cpan.repository.steve.org.uk/</a></li>
-</ul>
-<p><b>Note</b>: As of September 2013 this Perl XML-RPC API is officially depreciated and frozen.</p>
 </dd>
 </dl>
 </blockquote>
