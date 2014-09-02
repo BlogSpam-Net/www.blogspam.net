@@ -37,10 +37,11 @@ somebody else, and then demand they cannot share it or further change it.</p>
 </blockquote>
 
 <blockquote>
-<h2>Recent News - March 2014</h2>
+<h2>Recent News - September 2014</h2>
 <blockquote>
- <p>All of our <a href="/code/samples/">sample code</a> has been updated to use the <a href="/api/2.0">API v2.0</a> we present to the outside world.</p>
- <p>The <a href="/plugins/">Wordpress plugin</a> is once again listed in the <a href="http://wordpress.org/plugins/blogspam/">wordpress plugin directory</a>, making it more likely to be discovered and updated.</p>
+<p>Our website has undergone minor tweaking, and references to the old Perl-based server implementation have been removed.</p>
+<p>All of our <a href="/code/samples/">sample code</a> has been updated to use the <a href="/api/2.0">API v2.0</a> we present to the outside world.</p>
+<p>The <a href="/plugins/">Wordpress plugin</a> is once again listed in the <a href="http://wordpress.org/plugins/blogspam/">wordpress plugin directory</a>, making it more likely to be discovered and updated.</p>
 </blockquote>
 
 </blockquote>
