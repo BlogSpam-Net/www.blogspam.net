@@ -3,12 +3,12 @@ title: BlogSpam.net :: Client API v1.0
 
 
 <blockquote><div style="border: 1px solid red;">
-<p><b>Please NOTE</b> - This documentation refers to the deprecated v1.0 API, you should prefer the <a href="/api/2.0">v2.0</a> API.</p>
+<p><b>Please NOTE</b> - This documentation refers to the deprecated <b>obsolete</b> v1.0 API, you should prefer the <a href="/api/2.0">v2.0</a> API.</p>
 </div></blockquote>
 
 <h2>Connection Details</h2>
 <blockquote>
-<p>Unless you've downloaded the <a href="/code/">server source code</a> and are running your own local installation you should submit your to the following host:</p>
+<p>Unless you're running your own local instance of the BlogSpam service should submit your to the following host:</p>
 <blockquote>
 <table>
 <tr><td><b>Hostname</b></td><td><tt>test.blogspam.net</tt></td></tr>
