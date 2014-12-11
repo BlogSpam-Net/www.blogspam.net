@@ -37,11 +37,11 @@ somebody else, and then demand they cannot share it or further change it.</p>
 </blockquote>
 
 <blockquote>
-<h2>Recent News - September 2014</h2>
+<h2>Recent News - December 2014</h2>
 <blockquote>
 <p>Our website has undergone minor tweaking, and references to the old Perl-based server implementation have been removed.</p>
-<p>All of our <a href="/code/samples/">sample code</a> has been updated to use the <a href="/api/2.0">API v2.0</a> we present to the outside world.</p>
-<p>The <a href="/plugins/">Wordpress plugin</a> is once again listed in the <a href="http://wordpress.org/plugins/blogspam/">wordpress plugin directory</a>, making it more likely to be discovered and updated.</p>
+<p>This correlates with the retirement of the obsolete <a href="/api/1.0">XML/RPC-based API</a>.  The old API will be disabled, retired, and removed on <b>1st January 2015</b>.</p>
+<p>All clients <b>must</b> use the <a href="/api/2.0/">HTTP + JSON API</a> if they wish service to continue without interruption</p>
 </blockquote>
 
 </blockquote>
