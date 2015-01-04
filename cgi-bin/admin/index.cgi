@@ -10,6 +10,8 @@ use CGI;
 binmode( STDOUT, ":utf8" );
 my $cgi  = new CGI;
 my $r    = new Redis;
+my $json = JSON->new()->allow_nonref();
+
 
 
 if ( $cgi->param("blacklist") )
@@ -24,7 +26,7 @@ if ( $cgi->param("blacklist") )
 }
 elsif ( $cgi->param("trim") )
 {
-    $r->ltrim( "recent-comments" , 0, 0 );
+    $r->ltrim( "recent-comments", 0, 0 );
     print $cgi->redirect( -url => '/cgi-bin/admin/index.cgi' );
     exit;
 }
@@ -32,16 +34,14 @@ else
 {
     print "Content-type: text/html\n\n";
 
-
     my $out   = "";
     my $count = 0;
 
-    my @ent =  $r->lrange( "recent-comments", 0, -1 );
-    foreach my $ent ( @ent )
+    my @ent = $r->lrange( "recent-comments", 0, -1 );
+    foreach my $ent (@ent)
     {
         my $obj;
-
-        eval {$obj = decode_json($ent);};
+        eval {$obj = $json->decode($ent); $obj = $json->decode($obj)};
         next if ($@);
 
         #
@@ -55,7 +55,7 @@ else
         #
         #  Ignore some sites
         #
-        next if ( ( $obj )  && ( $obj->{'site'} =~ /www.wejoinin.com/ ) );
+        next if ( ($obj) && ( $obj->{ 'site' } =~ /www.wejoinin.com/ ) );
 
         #
         #  Ignore comments that come from hosts we've already blacklisted.
@@ -66,12 +66,13 @@ else
         #
         #  Ignore empty comments?
         #
-        next unless ( length($obj->{ 'comment' }) > 0 );
+        next unless ( length( $obj->{ 'comment' } ) > 0 );
 
-        my $method = $obj->{'method'} || "JSON";
+        my $method = $obj->{ 'method' } || "JSON";
 
 
-        $out .= "<p>$method <a href=\"/cgi-bin/admin/index.cgi?blacklist=$ip\">$ip</a> ";
+        $out .=
+          "<p>$method <a href=\"/cgi-bin/admin/index.cgi?blacklist=$ip\">$ip</a> ";
         $out .= " - [Subject: $obj->{ 'subject' }]" if ( $obj->{ 'subject' } );
         $out .= "</p>";
 
