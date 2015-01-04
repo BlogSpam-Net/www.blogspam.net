@@ -37,11 +37,11 @@ somebody else, and then demand they cannot share it or further change it.</p>
 </blockquote>
 
 <blockquote>
-<h2>Recent News - December 2014</h2>
+<h2 style="color: red !important; border-bottom: 1px solid red; width:100%">Recent News - January 2014</h2>
 <blockquote>
-<p>Our website has undergone minor tweaking, and references to the old Perl-based server implementation have been removed.</p>
-<p>This correlates with the retirement of the obsolete <a href="/api/1.0">XML/RPC-based API</a>.  The old API will be disabled, retired, and removed on <b>1st January 2015</b>.</p>
-<p>All clients <b>must</b> use the <a href="/api/2.0/">HTTP + JSON API</a> if they wish service to continue without interruption</p>
+<p>The old <a href="/api/1.0">XML/RPC-based API</a> has been removed, disabled, retired and ceased.</p>
+<p>All clients <b>must</b> use the <a href="/api/2.0/">HTTP + JSON API</a> if they wish to continue using our service.</p>
+<p>The wordpress plugin has been updated, and bugs reported against the major known clients (for example <a href="http://trac.edgewall.org/ticket/11468">trac</a>).</p>
 </blockquote>
 
 </blockquote>
