@@ -12,7 +12,7 @@
     <!-- tmpl_if name='header' -->
         <!-- tmpl_var name='header' -->
     <!-- /tmpl_if -->
-  <script src="http://static.steve.org.uk/js/jquery/jquery.js" type="text/javascript"></script>
+  <script src="/js/jquery-1.11.2.min.js" type="text/javascript"></script>
   <script type="text/JavaScript">
 <!--
    function loadStats()
