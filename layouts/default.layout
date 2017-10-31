@@ -66,7 +66,9 @@
 </div>
 
 <div id="main">
-<p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div style="text-align:center;background-color:#fefefe; width:100%;border: solid red 1px"><p><b>Service Termination</b>: This service will be taken offline on November 14th 2017</p></div>
+  <p>&nbsp;</p>
 <!-- tmpl_var name='content' -->
 <p>&nbsp;</p>
 <p>&nbsp;</p>
