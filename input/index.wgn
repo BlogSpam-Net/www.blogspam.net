@@ -37,11 +37,9 @@ somebody else, and then demand they cannot share it or further change it.</p>
 </blockquote>
 
 <blockquote>
-<h2 style="color: red !important; border-bottom: 1px solid red; width:100%">Recent News - January 2014</h2>
+<h2 style="color: red !important; border-bottom: 1px solid red; width:100%">Recent News - November 2017</h2>
 <blockquote>
-<p>The old <a href="/api/1.0">XML/RPC-based API</a> has been removed, disabled, retired and ceased.</p>
-<p>All clients <b>must</b> use the <a href="/api/2.0/">HTTP + JSON API</a> if they wish to continue using our service.</p>
-<p>The wordpress plugin has been updated, and bugs reported against the major known clients (for example <a href="http://trac.edgewall.org/ticket/11468">trac</a>).</p>
+<p><a href="/code/">Our server</a> has been rewritten to be more efficient, allowing it to continue operation with less resources.</p>
 </blockquote>
 
 </blockquote>
