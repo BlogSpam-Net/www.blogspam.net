@@ -10,12 +10,11 @@ faq_page: 1
 		<blockquote>
                 <dl>
                 <dt>Where is the code behind the service?</dt>
-                <dd><p>The code which powers this server has always been released as open source software, and you can gain access <a href="/code/">the code</a>.</p>
+                <dd><p><a href="/code/">The code</a> which powers this server has always been released as open source software.</p>
                 <p>If you wish to run your own internal comment-testing service you should expect to be able to so pretty easily.</p>
                 </dd>
                 <dt>How is the server code licensed?</dt>
-                <dd><p>The code behind the server component of the software is licensed under <b>both</b> the Perl Artistic license, and the GNU General Public License, version 2.x</p>
-		    <p>Pick whichever license you prefer.</p>
+                <dd><p>The code behind the server component of the software is licensed under the terms of the GNU General Public License, version 3.x</p>
 <p>&nbsp;</p>
                 </dd>
 
