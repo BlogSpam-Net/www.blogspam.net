@@ -5,7 +5,7 @@ home_page: 1
 <blockquote>
 <h2>BlogSpam.net - Blog &amp; Forum SPAM Detection</h2>
 <blockquote>
-<p>The blogspam site exists to provide a service which allows you to test whether a submitted blog/forum comment is SPAM or not, in real-time.</p>
+<p>The blogspam site exists to provide a service which allows you to test whether incoming blog/forum comments are SPAM in real-time.</p>
 <p>We can identify many common SPAM characteristics and using them allow comments to be blocked - cutting down on the SPAM that might otherwise affect your site.</p>
 </blockquote>
 </blockquote>
@@ -14,8 +14,8 @@ home_page: 1
 <blockquote>
 <h2>Why do we care?</h2>
 <blockquote>
-<p>This site was created by <a href="http://www.steve.org.uk/">Steve Kemp</a> to consolidate the SPAM detection he was previously forced to maintain on multiple sites - most notabily the <a href="http://www.debian-administration.org/">Debian Administration</a> website.</p>
-<p>By moving the SPAM-detection to one central location, behind a <a href="/api/">simple API</a>, it is now possible to make a change in one location and see improvements in all the sites that use the service.</p>
+<p>This site was created by <a href="https://steve.kemp.fi/">Steve Kemp</a> to consolidate the SPAM detection he was previously forced to maintain on multiple sites - most notabily the <a href="https://www.debian-administration.org/">Debian Administration</a> website.</p>
+<p>By moving the SPAM-detection to one central location, behind a <a href="/api/">simple API</a>, it is now possible to make improvements centrally and see those improvements in all the sites that use the service.</p>
 <p>Having additional users helps to encourage <a href="/contact/">useful feedback</a>, allowing further improvements to be added over time.</p>
 </blockquote>
 </blockquote>
