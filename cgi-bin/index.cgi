@@ -8,10 +8,11 @@ index.cgi - Show the spam/ok stats.
 
 =head1 ABOUT
 
-This program outputs the global SPAM/GOOD stats by reading the
-redis keys "global-spam" and "global-ok" respectively.
+This program outputs the global SPAM/GOOD stats by requesting them
+from our BlogSPAM API.
 
-These stats are displayed upon the project's homepage via Ajax.
+We do this because the back-end shouldn't have any implementation
+knowledge about the service itself.
 
 =cut
 
@@ -25,7 +26,7 @@ These stats are displayed upon the project's homepage via Ajax.
 
 =head1 LICENSE
 
-Copyright (c) 2008-2013 by Steve Kemp.  All rights reserved.
+Copyright (c) 2008-2017 by Steve Kemp.  All rights reserved.
 
 This module is free software;
 you can redistribute it and/or modify it under
@@ -40,14 +41,32 @@ The LICENSE file contains the full text of the license.
 use strict;
 use warnings;
 
+use JSON;
+use LWP::UserAgent;
 
-use Redis;
 
-my $r    = Redis->new();
-my $spam = $r->get("global-spam") || 0;
-my $ok   = $r->get("global-ok") || 0;
-$r->quit();
+#
+# Create the helper.
+#
+my $ua = LWP::UserAgent->new;
+$ua->timeout(10);
+$ua->env_proxy;
 
+#
+# Make the request, and show any errors.
+#
+my $response = $ua->get('http://test.blogspam.net:9999/global-stats');
+
+if ( !$response->is_success )
+{
+    print $response->status_line;
+    exit(0);
+}
+
+#
+# Decode the JSON
+#
+my $obj = decode_json( $response->decoded_content() );
 
 print <<EOF;
 Content-type: application/xml
@@ -55,10 +74,10 @@ Content-type: application/xml
 <?xml version="1.0" ?>
 <data>
 <spam>
-$spam
+$obj->{'spam'}
 </spam>
 <ham>
-$ok
+$obj->{'ok'}
 </ham>
 </data>
 
